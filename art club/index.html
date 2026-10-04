@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art & Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#A9CCE3;
+    --sky-deep:#7FA8C9;
+    --ink:#2B3A42;
+    --paper:#FBFAF7;
+    --gold:#D9B44A;
+    --muted:#6E7A80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Jost',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500}
+
+  /* ---------- Language switcher ---------- */
+  .lang-bar{
+    display:flex;justify-content:center;gap:1.5rem;
+    padding:.9rem;background:var(--paper);
+    border-bottom:1px solid rgba(43,58,66,.08);
+    position:sticky;top:0;z-index:10;backdrop-filter:blur(6px);
+  }
+  .lang-bar button{
+    background:none;border:none;cursor:pointer;
+    font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--muted);padding:.2rem .1rem;
+    border-bottom:1px solid transparent;transition:.25s;
+  }
+  .lang-bar button:hover{color:var(--ink)}
+  .lang-bar button.active{color:var(--ink);border-bottom-color:var(--gold)}
+
+  /* ---------- Hero ---------- */
+  header{text-align:center;padding:7rem 1.5rem 5rem}
+  .eyebrow{
+    font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;
+    color:var(--sky-deep);margin-bottom:1.4rem;
+  }
+  header h1{font-size:clamp(3rem,9vw,6rem);line-height:1.05;letter-spacing:.01em}
+  header h1 span{color:var(--gold)}
+  header p{
+    max-width:34rem;margin:1.8rem auto 0;color:var(--muted);
+    font-weight:300;font-size:1.05rem;
+  }
+  .rule{width:52px;height:1px;background:var(--gold);margin:2.4rem auto 0}
+
+  /* ---------- Activities ---------- */
+  main{max-width:1100px;margin:0 auto;padding:2rem 1.5rem 5rem}
+  .section-title{
+    text-align:center;font-size:2.2rem;margin-bottom:.6rem;
+  }
+  .section-sub{text-align:center;color:var(--muted);font-weight:300;margin-bottom:3.5rem}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2.5rem}
+  .card{background:#fff;border:1px solid rgba(43,58,66,.07)}
+  .card figure{overflow:hidden;aspect-ratio:4/5;background:var(--sky)}
+  .card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+  .card:hover img{transform:scale(1.05)}
+  .card-body{padding:1.6rem 1.4rem 2rem}
+  .num{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:.95rem;letter-spacing:.2em}
+  .card h3{font-size:1.6rem;margin:.35rem 0 .6rem}
+  .card p{font-size:.92rem;color:var(--muted);font-weight:300}
+
+  footer{
+    text-align:center;padding:3rem 1.5rem;border-top:1px solid rgba(43,58,66,.08);
+    color:var(--muted);font-size:.8rem;letter-spacing:.1em;
+  }
+
+  /* ---------- RTL (Arabic) ---------- */
+  html[dir="rtl"] body{text-align:right}
+  html[dir="rtl"] .lang-bar{direction:ltr}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button data-lang="en" class="active">English</button>
+  <button data-lang="ar">العربية</button>
+  <button data-lang="tr">Türkçe</button>
+  <button data-lang="es">Español</button>
+</div>
+
+<header>
+  <div class="eyebrow" data-i18n="eyebrow"></div>
+  <h1><span>Art</span> &amp; Design</h1>
+  <p data-i18n="intro"></p>
+  <div class="rule"></div>
+</header>
+
+<main>
+  <h2 class="section-title" data-i18n="activitiesTitle"></h2>
+  <p class="section-sub" data-i18n="activitiesSub"></p>
+
+  <div class="grid">
+    <article class="card">
+      <figure><img src="images/painting.jpg" alt="Painting day"></figure>
+      <div class="card-body">
+        <div class="num">01</div>
+        <h3 data-i18n="a1t"></h3>
+        <p data-i18n="a1d"></p>
+      </div>
+    </article>
+
+    <article class="card">
+      <figure><img src="images/clay.jpg" alt="Clay day"></figure>
+      <div class="card-body">
+        <div class="num">02</div>
+        <h3 data-i18n="a2t"></h3>
+        <p data-i18n="a2d"></p>
+      </div>
+    </article>
+
+    <article class="card">
+      <figure><img src="images/calligraphy.jpg" alt="Calligraphy day"></figure>
+      <div class="card-body">
+        <div class="num">03</div>
+        <h3 data-i18n="a3t"></h3>
+        <p data-i18n="a3d"></p>
+      </div>
+    </article>
+
+    <article class="card">
+      <figure><img src="images/visionboard.jpg" alt="Vision board day"></figure>
+      <div class="card-body">
+        <div class="num">04</div>
+        <h3 data-i18n="a4t"></h3>
+        <p data-i18n="a4d"></p>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <span data-i18n="footer"></span>
+</footer>
+
+<script>
+const translations = {
+  en:{
+    eyebrow:"A Studio of Quiet Creativity",
+    intro:"An introduction to the gatherings we host — unhurried sessions devoted to making things by hand. Dates and locations are shared with members.",
+    activitiesTitle:"What We Host",
+    activitiesSub:"Four ways to spend an afternoon with us.",
+    a1t:"Painting Day",
+    a1d:"A slow, open session where colour does the talking. Bring your own canvas or borrow ours and simply begin.",
+    a2t:"Clay Day",
+    a2d:"Hands in the material. We shape small vessels and forms, learning to let the clay lead as much as we do.",
+    a3t:"Calligraphy Day",
+    a3d:"Ink, patience, and repetition. An evening spent refining a single stroke until it feels inevitable.",
+    a4t:"Vision Board Day",
+    a4d:"Paper, scissors, and intention. A quiet hour of assembling the year you would like to live.",
+    footer:"Art & Design — By appointment."
+  },
+  ar:{
+    eyebrow:"مرسمٌ للإبداع الهادئ",
+    intro:"لمحة عن اللقاءات التي ننظّمها — جلسات متأنّية مخصّصة للصناعة باليد. تُشارَك المواعيد والأماكن مع الأعضاء.",
+    activitiesTitle:"ما ننظّمه",
+    activitiesSub:"أربع طرق لقضاء بعد ظهرٍ معنا.",
+    a1t:"يوم الرسم",
+    a1d:"جلسة بطيئة ومفتوحة يتولّى فيها اللون الحديث. أحضر لوحتك أو استعر واحدةً منّا وابدأ ببساطة.",
+    a2t:"يوم الطين",
+    a2d:"اليدان في المادة. نشكّل أوانياً وأشكالاً صغيرة ونتعلّم أن نترك الطين يقود بقدر ما نقود.",
+    a3t:"يوم الخطّ",
+    a3d:"حبرٌ وصبرٌ وتكرار. أمسية نُصقل فيها حركة واحدة حتى تبدو حتمية.",
+    a4t:"يوم لوحة الرؤية",
+    a4d:"ورقٌ ومقصٌّ ونيّة. ساعة هادئة نجمع فيها السنة التي نودّ أن نعيشها.",
+    footer:"Art & Design — بموعد مسبق."
+  },
+  tr:{
+    eyebrow:"Sakin Bir Yaratıcılık Atölyesi",
+    intro:"Düzenlediğimiz buluşmaların tanıtımı — elle üretmeye ayrılmış acelesiz oturumlar. Tarihler ve mekânlar üyelerle paylaşılır.",
+    activitiesTitle:"Neler Düzenliyoruz",
+    activitiesSub:"Bizimle bir öğleden sonra geçirmenin dört yolu.",
+    a1t:"Resim Günü",
+    a1d:"Yavaş ve açık bir oturum; konuşan renkler olur. Kendi tuvalinizi getirin ya da bizden ödünç alın ve başlayın.",
+    a2t:"Kil Günü",
+    a2d:"Eller malzemenin içinde. Küçük kaplar ve biçimler şekillendirir, kili en az kendimiz kadar yönlendirmeye izin vermeyi öğreniriz.",
+    a3t:"Hat Günü",
+    a3d:"Mürekkep, sabır ve tekrar. Tek bir çizgiyi kaçınılmaz hissedilene dek incelttiğimiz bir akşam.",
+    a4t:"Vizyon Panosu Günü",
+    a4d:"Kâğıt, makas ve niyet. Yaşamak istediğiniz yılı bir araya getirdiğiniz sessiz bir saat.",
+    footer:"Art & Design — Randevuyla."
+  },
+  es:{
+    eyebrow:"Un estudio de creatividad serena",
+    intro:"Una introducción a los encuentros que organizamos: sesiones sin prisa dedicadas a crear con las manos. Fechas y lugares se comparten con los miembros.",
+    activitiesTitle:"Qué Organizamos",
+    activitiesSub:"Cuatro maneras de pasar una tarde con nosotros.",
+    a1t:"Día de Pintura",
+    a1d:"Una sesión lenta y abierta donde el color lleva la conversación. Trae tu propio lienzo o pide uno prestado y simplemente empieza.",
+    a2t:"Día de Arcilla",
+    a2d:"Las manos en la materia. Modelamos pequeñas vasijas y formas aprendiendo a dejar que la arcilla guíe tanto como nosotros.",
+    a3t:"Día de Caligrafía",
+    a3d:"Tinta, paciencia y repetición. Una tarde puliendo un solo trazo hasta que parece inevitable.",
+    a4t:"Día de Vision Board",
+    a4d:"Papel, tijeras e intención. Una hora tranquila para componer el año que te gustaría vivir.",
+    footer:"Art & Design — Con cita previa."
+  }
+};
+
+function setLang(lang){
+  const dict = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(dict[key]) el.textContent = dict[key];
+  });
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  document.querySelectorAll('.lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+}
+
+document.querySelectorAll('.lang-bar button').forEach(btn=>{
+  btn.addEventListener('click', ()=> setLang(btn.dataset.lang));
+});
+
+setLang('en');
+</script>
+</body>
+</html>
